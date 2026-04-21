@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- boostrap embeds -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <title>Pace Calculator NCSU Club XCTF</title>
+    <script type="module" src="./calculator.js" defer></script>
+</head>
+
+<style>
+    * {
+        margin:10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <h1>Pace Calculator</h1>
+                    <p>Aligned with common terminology used by the NCSU Club XCTF Team.</p>
+                    <form id="calcForm">
+                        <div class="input-group">
+                            <label name="distance">Distance:</label>
+                            <select name="distance">
+                                <option value="1600">1600</option>
+                                <option value="1600">1500</option>
+                                <option value="5000">5k</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label name="yourTime">Your Time:</label>
+                            <input min="0" class="form-control" type="number" name="hours" required>
+                            <input min="0" max="59" class="form-control" type="number" name="minutes" required>
+                            <input min="0" max="59" class="form-control" type="number" name="seconds" required>
+                        </div>
+                        <input class="btn btn-danger" type="submit" value="Calculate!">
+                    </form>
+
+                    <div id="results" class="container">
+                        <div class="row">
+                            <div class="col">
+                                <b>Provided Time</b>
+                            </div>
+                            <div class="col">
+                                <b>Lactic Threshold (LT)</b>
+                            </div>
+                            <div class="col">
+                                <b>Movin Pace (Marathon) (MP)</b>
+                            </div>
+                            <div class="col">
+                                <b>Steady Tempo (ST)</b>
+                            </div>
+                            <div class="col">
+                                <b>Endurance Tempo (ET)</b>
+                            </div>
+                        </div>
+                        <!-- results will go here. -->
+                    </div>
+                    <p>Calculations are estimated using LOBF of tables provided by the work of Jack Daniels. Written by
+                        Lloyd
+                        Degnan '26</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- result template -->
+    <template id="resultTemplate">
+        <div class="row">
+            <div class="col" id="givenTime">
+
+            </div>
+            <div class="col" id="lacticTime">
+
+            </div>
+            <div class="col" id="movinTime">
+
+            </div>
+            <div class="col" id="steadyTime">
+
+            </div>
+            <div class="col" id="enduranceTime">
+
+            </div>
+        </div>
+    </template>
+
+</body>
+
+</html>
